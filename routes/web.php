@@ -69,3 +69,21 @@ Route::get('/inner-join', [PostController::class, 'innerJoinClause'])->name('pos
 Route::get('/left-join', [PostController::class, 'leftJoinClause'])->name('posts.leftjoin');
 
 Route::get('/right-join', [PostController::class, 'rightJoinClause'])->name('posts.rightjoin');
+
+Route::get('/all-posts', [PostController::class, 'getAllPostUsingModel'])->name('post.getallpostusingmodel');
+
+Route::get('/test', function(){
+    return view('test');
+});
+
+Route::get('/index', function(){
+    return view('index');
+});
+
+Route::get('/about', function(){
+    return view('about');
+});
+
+Route::get('/contact', function(){
+    return view('contact');
+});

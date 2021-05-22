@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -67,5 +68,10 @@ class PostController extends Controller
                     ->rightJoin('posts', 'users.id', '=', 'posts.user_id')
                     ->get();
         return $result;
+    }
+
+    public function getAllPostUsingModel(){
+        $post = Post::all();
+        return $post;
     }
 }
