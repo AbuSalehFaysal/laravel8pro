@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -106,3 +107,5 @@ Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.up
 Route::get('payment', function(){
     return Payment::process();
 });
+
+Route::get('/send-email', [MailController::class, 'sendEmail']);
